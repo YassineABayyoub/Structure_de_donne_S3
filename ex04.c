@@ -51,15 +51,15 @@ int main(void)
 	i = 0;
 	while(i < 20)
 	{
-		printf("Entrez le nom de l'employe pour le conge %d (ou 'fin' pour terminer) : ", i + 1);
+		printf("Entrez le nom de l'employe pour le conge %d (ou 'fin' pour terminer) : \n", i + 1);
 		scanf("%49s", conges[i].nom);
 		if (strcmp(conges[i].nom, "fin") == 0)
 			break;
 
-		printf("Entrez la date de debut (jour mois annee) : ");
+		printf("Entrez la date de debut (jour mois annee) : \n");
 		scanf("%d %d %d", &conges[i].debut.jour, &conges[i].debut.mois, &conges[i].debut.annee);
 
-		printf("Entrez la date de fin (jour mois annee) : ");
+		printf("Entrez la date de fin (jour mois annee) : \n");
 		scanf("%d %d %d", &conges[i].fin.jour, &conges[i].fin.mois, &conges[i].fin.annee);
 
 		if (comparerDates(conges[i].fin, conges[i].debut) < 0)
@@ -71,9 +71,9 @@ int main(void)
 		i++;
 	}
 	// Affichage des conges commençant pendant un mois et une année donnés
-	printf("Entrez le mois recherche : ");
+	printf("Entrez le mois recherche : \n");
 	scanf("%d", &moisRecherche);
-	printf("Entrez l'annee recherche : ");
+	printf("Entrez l'annee recherche : \n");
 	scanf("%d", &anneeRecherche);
 
 	for (int j = 0; j < i; j++)
