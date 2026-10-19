@@ -7,6 +7,9 @@ Exercice 1 - Structure Etudiant
 			struct Etudiant saisirEtudiant(void); 
 			void afficherEtudiant(struct Etudiant e); 
 			int estAdmis(struct Etudiant e);
+	Un étudiant est admis si sa moyenne est supérieure ou égale à 10. 
+		4. Vérifier que la moyenne saisie appartient à [0, 20]. 
+		5. Écrire un programme principal utilisant ces fonctions. 
 */
 #include <stdio.h>
 
@@ -28,6 +31,11 @@ struct Etudiant saisirEtudiant(void)
 
     printf("Entrez la moyenne de l'etudiant : ");
     scanf("%f", &e.moyenne);
+	while (e.moyenne < 0.0 || e.moyenne > 20.0)
+	{
+		printf("Moyenne invalide. Veuillez entrer une moyenne entre 0 et 20 : ");
+		scanf("%f", &e.moyenne);
+	}
 
     return (e);
 }
